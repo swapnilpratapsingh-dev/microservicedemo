@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: payment-service
+    name: product-service
   profiles:
     active: dev
   datasource:
