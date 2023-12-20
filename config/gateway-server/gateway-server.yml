@@ -11,27 +11,27 @@ spring:
       routes:
         - id: user-service
           uri: lb://user
-          predicate: 
+          predicates: 
             - Path=/user/**
 
         - id: product-service
           uri: lb://product
-          predicate: 
+          predicates: 
             - Path=/product/**
 
         - id: cart-service
           uri: lb://cart
-          predicate: 
+          predicates: 
             - Path=/cart/**
 
         - id: order-service
           uri: lb://order
-          predicate: 
+          predicates: 
             - Path=/order/**
         
         - id: payment-service
           uri: lb://payment
-          predicate: 
+          predicates: 
             - Path=/payment/**
 
         
