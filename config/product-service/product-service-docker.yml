@@ -1,0 +1,36 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: product-service
+  profiles:
+    active: docker
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/demo
+    username: demouser
+    password: demouser
+  jpa:
+    hibernate.ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    defer-datasource-initialization: true
+  cloud:
+    loadbalancer:
+      ribbon:
+        enable: false
+  sql:
+    init:
+      mode: always
+
+  kafka:
+    bootstrap-servers: kafkaserver:9092
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8088/eureka

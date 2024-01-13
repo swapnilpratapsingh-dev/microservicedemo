@@ -1,0 +1,56 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: gateway-server
+  profiles:
+    active: docker
+  config:
+    import: configserver:http://config-server:8085
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates: 
+            - Path=/user/**
+
+        - id: product-service
+          uri: lb://product-service
+          predicates: 
+            - Path=/product/**
+
+        - id: cart-service
+          uri: lb://cart-service
+          predicates: 
+            - Path=/cart/**
+
+        - id: order-service
+          uri: lb://order-service
+          predicates: 
+            - Path=/order/**
+        
+        - id: payment-service
+          uri: lb://payment-service
+          predicates: 
+            - Path=/payment/**
+
+        
+
+
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-server:8088/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
