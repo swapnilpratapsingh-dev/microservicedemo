@@ -1,8 +1,7 @@
 spring:
   application:
     name: mock-payment-gateway-service
-  profiles:
-    active: dev
+
   kafka:
     bootstrap-servers: localhost:9092
 

@@ -4,8 +4,7 @@ server:
 spring:
   application:
     name: cart-service
-  profiles:
-    active: docker
+
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/demo
