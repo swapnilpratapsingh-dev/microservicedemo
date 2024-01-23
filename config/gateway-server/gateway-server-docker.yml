@@ -4,7 +4,7 @@ server:
 spring:
   application:
     name: gateway-server
-
+    
   config:
     import: configserver:http://config-server:8085
   cloud:
@@ -34,10 +34,6 @@ spring:
           uri: lb://payment-service
           predicates: 
             - Path=/payment/**
-
-        
-
-
 
 eureka:
   instance:
