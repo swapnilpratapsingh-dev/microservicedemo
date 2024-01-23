@@ -26,3 +26,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://eureka-server:8088/eureka
+  instance:
+    hostname: cart-service
