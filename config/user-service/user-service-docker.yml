@@ -11,7 +11,7 @@ spring:
     username: demouser
     password: demouser
   jpa:
-    hibernate.ddl-auto: create-drop
+    hibernate.ddl-auto: none
     generate-ddl: true
     show-sql: true
     properties:
